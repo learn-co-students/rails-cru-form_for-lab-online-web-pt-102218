@@ -1,39 +1,46 @@
 Rails.application.routes.draw do
-  get 'songs/index' => 'songs#index', :as => :songs
 
-  get 'songs/:id' => 'songs#show', :as => :song
+  resources :songs, only: [:index, :new, :create, :edit, :update, :show]
 
-  get 'songs/new' => 'songs#new', :as => :new_song
+  resources :artists, only: [:index, :new, :create, :edit, :update, :show]
 
-  post 'songs/create' => 'songs#create'
+  resources :genres, only: [:index, :new, :create, :edit, :update, :show]
 
-  get 'songs/edit' => 'songs#edit', :as => :edit_song
+  # get 'songs/index' => 'songs#index', :as => :songs
 
-  put 'songs/update' => 'songs#update'
+  # get 'songs/new' => 'songs#new', :as => :new_song
 
-  get 'genres/index' => 'genres#index', :as => :genres
+  # post 'songs/index' => 'songs#create'
 
-  get 'genres/:id' => 'genres#show', :as => :genre
+  # get 'songs/edit' => 'songs#edit', :as => :edit_song
 
-  get 'genres/new' => 'genres#new', :as => :new_genre
+  # put 'songs/:id' => 'songs#update'
 
-  post 'genres/create' => 'genres#create'
+  # get 'songs/:id' => 'songs#show', :as => :song
 
-  get 'genres/edit' => 'genres#edit', :as => :edit_genre
+  # get 'genres/index' => 'genres#index', :as => :genres
 
-  put 'genres/update' => 'genres#update'
+  # get 'genres/new' => 'genres#new', :as => :new_genre
 
-  get 'artists/index' => 'artists#index', :as => :artists
+  # post 'genres/index' => 'genres#create'
 
-  get 'artists/:id' => 'artists#show', :as => :artist
+  # get 'genres/edit' => 'genres#edit', :as => :edit_genre
 
-  get 'artists/new' => 'artists#new', :as => :new_artist
+  # put 'genres/:id' => 'genres#update'
 
-  post 'artists/create' => 'artists#create'
+  # get 'artists/index' => 'artists#index', :as => :artists
 
-  get 'artists/edit' => 'artists#edit', :as => :edit_artist
+  # get 'genres/:id' => 'genres#show', :as => :genre
 
-  put 'artists/update' => 'artists#update'
+  # get 'artists/new' => 'artists#new', :as => :new_artist
+
+  # post 'artists/index' => 'artists#create'
+
+  # get 'artists/edit' => 'artists#edit', :as => :edit_artist
+
+  # put 'artists/:id' => 'artists#update'
+
+  # get 'artists/:id' => 'artists#show', :as => :artist
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
